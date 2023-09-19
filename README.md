@@ -91,3 +91,21 @@ npx sequelize-cli db:migrate
   "dialect": "mysql"             
 }
 ```
+
+
+```bash
+npx sequelize-cli seed:generate --name theaters-seeder
+```
+
+```bash
+npx sequelize-cli seed:generate --name movies-seeder
+```
+
+```bash
+npx sequelize-cli seed:generate --name movie-language-seeder
+```
+
+```bash
+npx sequelize-cli seed:generate --name shows-seeder
+```
+
