@@ -56,3 +56,38 @@ To set up the project, follow these steps:
 
 ## Contributing
 Feel free to modify this template as per your project requirements. If you have any suggestions, improvements, or bug fixes, please submit them as issues or pull requests on the GitHub repository.
+
+
+### **Create Migrations**
+```bash
+npx sequelize-cli model:generate --name Theater --attributes theaterName:string,address:string
+```
+
+```bash
+npx sequelize-cli model:generate --name Movie --attributes movieName:string,languageId:integer
+```
+
+```bash
+npx sequelize-cli model:generate --name Show --attributes theaterId:integer,movieId:integer,date:date,time:time
+```
+
+```bash
+npx sequelize-cli model:generate --name Language --attributes language_Name:string
+```
+
+### **Run Migrations**
+```bash
+npx sequelize-cli db:migrate
+```
+
+
+### **Add Database Configuration to config/config.json**
+```json
+"development": {
+  "username": "username", 
+  "password": null,          
+  "database": "database_name",
+  "host": "127.0.0.1",          
+  "dialect": "mysql"             
+}
+```
