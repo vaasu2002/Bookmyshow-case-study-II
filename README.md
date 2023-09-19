@@ -109,3 +109,6 @@ npx sequelize-cli seed:generate --name movie-language-seeder
 npx sequelize-cli seed:generate --name shows-seeder
 ```
 
+```sql
+SELECT DISTINCT(date) AS date FROM Shows AS Show WHERE Show.theaterId = 1;
+```
