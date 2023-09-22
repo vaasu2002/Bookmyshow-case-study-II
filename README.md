@@ -3,7 +3,6 @@
 ## **Endpoints**
 - **GET** /api/v1/theater
 ![postman_get_all_theatres](https://github.com/vaasu2002/Bookmyshow-case-study-II/assets/92209437/f2a5926e-fe4e-4bd8-83ab-d269d1d09483)
-s
 - **GET** /api/v1/theaters/:id/dates
 ![postman_get_all_dates_for_specific_theaters](https://github.com/vaasu2002/Bookmyshow-case-study-II/assets/92209437/c32590a0-63ea-453d-af15-d21e224e6345)
 
