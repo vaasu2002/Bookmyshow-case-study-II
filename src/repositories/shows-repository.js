@@ -1,6 +1,7 @@
 const CrudRepository = require('./crud-repository');
 const { Show,Movie,Language } = require('../models');
 const Sequelize = require('sequelize');
+const db = require('../models');
 
 class ShowRepository extends CrudRepository{
     constructor(){
@@ -42,6 +43,32 @@ class ShowRepository extends CrudRepository{
         }catch(error){
             console.log(error);
             throw new AppError('Cannot fetch data of all the movies', StatusCodes.INTERNAL_SERVER_ERROR);
+        }
+    }
+
+    addRowLockOnFlights(showId) {
+        return `SELECT * from Shows WHERE Shows.id = ${showId} FOR UPDATE;`
+    }
+
+    async updateRemainingSeats(showId, seats,decrement = true){
+        const transaction = await db.sequelize.transaction();
+        try{
+            
+            await db.sequelize.query(this.addRowLockOnFlights(showId))
+            const show = await Show.findByPk(showId);
+            if(+decrement) {
+                
+                await show.decrement('totalSeatsLeft', {by: seats}, {transaction: transaction});
+            } else {
+                await show.increment('totalSeatsLeft', {by: seats}, {transaction: transaction});
+            }
+            await transaction.commit();
+            return show;
+
+        }catch(error){
+            console.log(error);
+            await transaction.rollback();
+            throw new AppError('Cannot update remaining seats', StatusCodes.INTERNAL_SERVER_ERROR);
         }
     }
 }

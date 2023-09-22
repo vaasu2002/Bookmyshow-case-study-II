@@ -28,6 +28,10 @@ module.exports = (sequelize, DataTypes) => {
         targetKey: 'id',
         as:'languageDetails'
       })
+
+      this.hasMany(models.Booking,{
+        foreignKey:'showId ',
+      })
     }
   }
   Show.init({
@@ -51,6 +55,16 @@ module.exports = (sequelize, DataTypes) => {
       type: DataTypes.TIME,
       allowNull:false
     },
+    totalSeatsLeft:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 400
+    },
+    price:{
+      type: DataTypes.INTEGER,
+      allowNull: false,
+      defaultValue: 150
+    }
   }, {
     sequelize,
     modelName: 'Show',

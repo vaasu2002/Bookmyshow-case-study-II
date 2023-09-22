@@ -1,11 +1,22 @@
-# Node.js Project Template [Backend]
 
-This is a Node.js project template that provides a solid foundation for building scalable and maintainable applications. It follows best practices and incorporates project management recommendations. Feel free to customize and modify it according to your specific needs.
+# **API DOCUMENTATION**
+## **Endpoints**
+- **GET** /api/v1/theaters
+![alt text](images\postman_get_all_theatres.png)
 
-## Project Structure
+- **GET** /api/v1/theaters/:id/dates
+![alt text](images\postman_get_all_dates_for_specific_theaters.png)
+
+- **GET** /api/v1/theaters/:id/movies?date=2023-09-25 00:00:00
+![alt text](images\postman_get_all_show_in_a_threater_for_specific_date.png)
+
+- **GET** /api/v1/theaters/:id/movies?date=2023-09-25 00:00:00
+![alt text](images\postman_get_all_show_in_a_threater_for_specific_date.png)
+
+## **Project Structure**
 The project structure is designed to keep the code organized and easy to navigate. Here's a breakdown of the main folders and their purposes:
 
-`src`: This folder contains all the source code for the project, excluding tests. You can add your application code here.
+  - `src`: This folder contains all the source code for the project, excluding tests. You can add your application code here.
 
   - `config`: This folder is dedicated to configuration files. It includes setup for libraries or modules used in the project, such as `dotenv` for managing environment variables or a logging library for meaningful logs. You can configure these libraries in the respective files.
 
@@ -21,7 +32,7 @@ The project structure is designed to keep the code organized and easy to navigat
 
   - `utils`: The utils folder houses helper methods, error classes, and other utility functions that can be reused throughout the project.
 
-## Project Setup
+## **Project Setup**
 To set up the project, follow these steps:
 
   - Download this template from GitHub and open it in your favorite text editor.
@@ -43,72 +54,31 @@ To set up the project, follow these steps:
     ```bash
     npx sequelize init
     ```
-  - This command will generate the migrations and seeders folders, along with a config.json file inside the config folder.
-
-  - If you are setting up the development environment, specify the username and password for your database in the config.json file. Also, mention the dialect corresponding to your database (e.g., mysql, mariadb).
-
+    This command will generate the migrations and seeders folders, along with a config.json file inside the config folder.
+    
+  - If you are setting up the development environment, specify the username and password for your database in the config.json file. Also, mention the     
+    dialect corresponding to your database (e.g., mysql, mariadb).
+    ```json
+    "development": {
+      "username": "username", 
+      "password": "password",          
+      "database": "database_name",
+      "host": "127.0.0.1",          
+      "dialect": "mysql"             
+    }
+    ```
   - If you are setting up the test or production environment, ensure that you replace the host with the URL of your hosted database.
 
+  - Run Migrations
+    ```bash
+    npx sequelize-cli db:migrate
+    ```
+
+  - Run Seeders to add sample data in your database
+    ```bash
+    npx sequelize db:seed --seed
+    ```
   - To run the server, execute the following command in the project's root directory:
     ```bash
     npm run dev
     ```
-
-## Contributing
-Feel free to modify this template as per your project requirements. If you have any suggestions, improvements, or bug fixes, please submit them as issues or pull requests on the GitHub repository.
-
-
-### **Create Migrations**
-```bash
-npx sequelize-cli model:generate --name Theater --attributes theaterName:string,address:string
-```
-
-```bash
-npx sequelize-cli model:generate --name Movie --attributes movieName:string,languageId:integer
-```
-
-```bash
-npx sequelize-cli model:generate --name Show --attributes theaterId:integer,movieId:integer,date:date,time:time
-```
-
-```bash
-npx sequelize-cli model:generate --name Language --attributes language_Name:string
-```
-
-### **Run Migrations**
-```bash
-npx sequelize-cli db:migrate
-```
-
-
-### **Add Database Configuration to config/config.json**
-```json
-"development": {
-  "username": "username", 
-  "password": null,          
-  "database": "database_name",
-  "host": "127.0.0.1",          
-  "dialect": "mysql"             
-}
-```
-
-
-```bash
-npx sequelize-cli seed:generate --name theaters-seeder
-```
-
-```bash
-npx sequelize-cli seed:generate --name movies-seeder
-```
-
-```bash
-npx sequelize-cli seed:generate --name movie-language-seeder
-```
-
-```bash
-npx sequelize-cli seed:generate --name shows-seeder
-```
-
-```sql
-SELECT DISTINCT(date) AS date FROM Shows AS Show WHERE Show.theaterId = 1;
-```
