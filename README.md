@@ -2,16 +2,15 @@
 # **API DOCUMENTATION**
 ## **Endpoints**
 - **GET** /api/v1/theaters
-![alt text](images\postman_get_all_theatres.png)
-
+![](https://github.com/vaasu2002/Bookmyshow-case-study-II/blob/Bookmyshow-case-study-II/images/postman_get_all_dates_for_specific_theaters.png)
 - **GET** /api/v1/theaters/:id/dates
-![alt text](images\postman_get_all_dates_for_specific_theaters.png)
+![alt text](images/postman_get_all_dates_for_specific_theaters.png)
 
 - **GET** /api/v1/theaters/:id/movies?date=2023-09-25 00:00:00
-![alt text](images\postman_get_all_show_in_a_threater_for_specific_date.png)
+![alt text](images/postman_get_all_show_in_a_threater_for_specific_date.png)
 
 - **GET** /api/v1/theaters/:id/movies?date=2023-09-25 00:00:00
-![alt text](images\postman_get_all_show_in_a_threater_for_specific_date.png)
+![alt text](images/postman_get_all_show_in_a_threater_for_specific_date.png)
 
 ## **Project Structure**
 The project structure is designed to keep the code organized and easy to navigate. Here's a breakdown of the main folders and their purposes:
