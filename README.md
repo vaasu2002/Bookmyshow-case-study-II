@@ -2,7 +2,7 @@
 # **API DOCUMENTATION**
 ## **Endpoints**
 - **GET** /api/v1/theaters
-![](https://github.com/vaasu2002/Bookmyshow-case-study-II/blob/Bookmyshow-case-study-II/images/postman_get_all_dates_for_specific_theaters.png)
+![Working](https://github.com/vaasu2002/Bookmyshow-case-study-II/blob/Bookmyshow-case-study-II/images/postman_get_all_dates_for_specific_theaters.png?raw=true)
 - **GET** /api/v1/theaters/:id/dates
 ![alt text](images/postman_get_all_dates_for_specific_theaters.png)
 
