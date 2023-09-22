@@ -1,4 +1,3 @@
-<img width="810" alt="Screenshot 2023-09-22 235340" src="https://github.com/vaasu2002/Bookmyshow-case-study-II/assets/92209437/2ba2b97d-63fe-43bb-92aa-984dea3a63e5">
 # **API DOCUMENTATION**
 ## **Endpoints**
 - **GET** /api/v1/theater
