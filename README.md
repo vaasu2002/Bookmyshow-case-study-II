@@ -11,7 +11,7 @@ s
 ![postman_get_all_show_in_a_threater_for_specific_date](https://github.com/vaasu2002/Bookmyshow-case-study-II/assets/92209437/0dd87145-655e-4cac-8b8b-3eddc476ea17)
 
 - **POST** /api/v1/bookings
-<img width="810" alt="Screenshot 2023-09-22 235340" src="https://github.com/vaasu2002/Bookmyshow-case-study-II/assets/92209437/24365d58-95c3-4261-ad74-ddf0f6cb93b1">
+![postman_perform_booking](https://github.com/vaasu2002/Bookmyshow-case-study-II/assets/92209437/24365d58-95c3-4261-ad74-ddf0f6cb93b1)
 
 
 ## **Project Structure**
@@ -25,7 +25,7 @@ The project structure is designed to keep the code organized and easy to navigat
 
   - `middlewares`: Middlewares intercept incoming requests and allow you to implement validators, authenticators, and other request processing logic.
 
-  - `controllers`: Controllers act as the last middlewares in the request pipeline. They receive incoming requests and data, call the business layer to execute the logic, and structure the API response before sending it back.
+  - `controllers`: Controllers act as the last middleware in the request pipeline. They receive incoming requests and data, call the business layer to execute the logic, and structure the API response before sending it back.
 
   - `repositories`: This folder contains the logic for interacting with the database. You can write raw queries or use an ORM (Object-Relational Mapping) here.
 
