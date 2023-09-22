@@ -2,8 +2,9 @@
 # **API DOCUMENTATION**
 ## **Endpoints**
 - **GET** /api/v1/theaters
-![alt text](images/postman_get_all_theatres.png)
-
+<p align="center">
+  <img width="60%" height="60%" src="images/postman_get_all_theatres.png">
+</p>
 - **GET** /api/v1/theaters/:id/dates
 ![alt text](images/postman_get_all_dates_for_specific_theaters.png)
 
