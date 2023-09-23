@@ -76,6 +76,10 @@ To set up the project, follow these steps:
     ```bash
     npx sequelize db:seed --seed
     ```
+  - Start redis cache using docker
+    ```bash
+    docker-compose -f redis-docker-compose.yml up
+    ```
   - To run the server, execute the following command in the project's root directory:
     ```bash
     npm run dev
